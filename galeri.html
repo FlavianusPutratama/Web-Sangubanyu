@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - Explore Sangubanyu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { fontFamily: { 'sans': ['Inter', 'sans-serif'] } } } }
+    </script>
+    <style>
+        body { background-color: #10140a; color: #e2e8f0; }
+        .nav-active { color: #4ade80; }
+    </style>
+</head>
+<body class="font-sans">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-[#10140a]/80 backdrop-blur-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex-1 flex justify-start"><a href="index.html" class="ml-4 md:ml-20"><img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1753879853/LOGO_ASSYIFA_2_dgjesj.png" alt="Logo Assyifa" class="h-12 w-auto"></a></div>
+            <div class="hidden md:flex flex-none justify-center items-center space-x-6 font-bold text-sm uppercase">
+                <a href="index.html" class="nav-link hover:text-green-300">Beranda</a>
+                <a href="sejarah.html" class="nav-link hover:text-green-300">Sejarah</a>
+                <a href="fasilitas.html" class="nav-link hover:text-green-300">Fasilitas</a>
+                <a href="galeri.html" class="nav-link nav-active hover:text-green-300">Galeri</a>
+                <a href="berita.html" class="nav-link hover:text-green-300">Berita</a>
+                <a href="reservasi.html" class="nav-link hover:text-green-300">Reservasi</a>
+                <a href="faq.html" class="nav-link hover:text-green-300">FAQ</a>
+                <a href="kontak.html" class="nav-link hover:text-green-300">Kontak</a>
+            </div>
+            <div class="flex-1 flex justify-end"><button id="mobile-menu-button" class="text-white focus:outline-none md:hidden"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#10140a]/90 backdrop-blur-sm">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">BERANDA</a>
+            <a href="sejarah.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">SEJARAH</a>
+            <a href="fasilitas.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">FASILITAS</a>
+            <a href="galeri.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">GALERI</a>
+            <a href="berita.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">BERITA</a>
+            <a href="reservasi.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">RESERVASI</a>
+            <a href="faq.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">FAQ</a>
+            <a href="kontak.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">KONTAK</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="pt-32 pb-16 min-h-screen">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-6xl font-black uppercase text-center">Galeri</h1>
+                <p class="mt-6 max-w-3xl mx-auto text-center text-gray-300">
+                    Lihat momen-momen indah yang tertangkap di Pemandian Air Panas Tirta Assyifa.
+                </p>
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656417/Foto_Hero_Section_1_nbuluf.png" class="rounded-lg shadow-lg hover:opacity-80 transition-opacity">
+                    <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656419/Foto_Hero_Section_2_tqwkep.png" class="rounded-lg shadow-lg hover:opacity-80 transition-opacity">
+                    <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656426/Foto_Hero_Section_3_su9j1d.png" class="rounded-lg shadow-lg hover:opacity-80 transition-opacity">
+                    <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656418/Foto_Hero_Section_4_twqa6e.png" class="rounded-lg shadow-lg hover:opacity-80 transition-opacity">
+                    <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656287/Drone_Image_Sangubanyu_mr15wn.png" class="rounded-lg shadow-lg hover:opacity-80 transition-opacity">
+                    <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752657040/Asset_Foto_Sangubanyu_x7yjc8.png" class="rounded-lg shadow-lg hover:opacity-80 transition-opacity">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#10140a] py-16"><div class="container mx-auto px-6"><div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left"><div><h3 class="text-2xl font-black tracking-wider uppercase">Sangubanyu</h3><div class="flex justify-center md:justify-start space-x-4 mt-4"><a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07...z"/></svg></a><a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg></a></div></div><div class="text-center md:text-right"><h4 class="font-bold text-lg uppercase">Kontak</h4><ul class="text-gray-400 mt-2 space-y-1"><li><a href="mailto:info@sangubanyu.id" class="hover:text-white">info@sangubanyu.id</a></li><li><a href="tel:+621234567890" class="hover:text-white">+62 123 4567 890</a></li></ul></div></div><div class="text-center text-gray-500 border-t border-white/10 pt-8 mt-8">&copy; 2025 Tim KKN IDBU 67 Universitas Diponegoro. All rights reserved.</div></div></footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

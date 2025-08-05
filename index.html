@@ -49,41 +49,44 @@
             transition: background-image 0.5s ease-in-out;
         }
     </style>
+
 </head>
 <body class="font-sans">
 
-    <!-- HEADER -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#10140a]/80 backdrop-blur-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- LOGO -->
             <div class="flex-1 flex justify-start">
-                <!-- Responsive margin: ml-4 on mobile, md:ml-20 on desktop -->
-                <a href="#" class="ml-4 md:ml-20">
+                <a href="index.html" class="ml-4 md:ml-20">
                     <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1753879853/LOGO_ASSYIFA_2_dgjesj.png" alt="Logo Assyifa" class="h-12 w-auto">
                 </a>
             </div>
             
-            <!-- DESKTOP MENU -->
-            <div class="hidden md:flex flex-none justify-center items-center space-x-8 font-bold text-sm uppercase">
-                <a href="#beranda" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Beranda</a>
-                <a href="#galeri" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Galeri</a>
-                <a href="#aktivitas" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Berita</a>
-                <a href="#kontak" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Kontak</a>
+            <div class="hidden md:flex flex-none justify-center items-center space-x-6 font-bold text-sm uppercase">
+                <a href="index.html" class="nav-link nav-active hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Beranda</a>
+                <a href="sejarah.html" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Sejarah</a>
+                <a href="fasilitas.html" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Fasilitas</a>
+                <a href="galeri.html" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Galeri</a>
+                <a href="berita.html" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Berita</a>
+                <a href="reservasi.html" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Reservasi</a>
+                <a href="faq.html" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">FAQ</a>
+                <a href="kontak.html" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Kontak</a>
             </div>
             
-            <!-- MOBILE MENU BUTTON -->
             <div class="flex-1 flex justify-end">
                 <button id="mobile-menu-button" class="text-white focus:outline-none md:hidden">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
         </nav>
-        <!-- MOBILE MENU DROPDOWN -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#10140a]/90 backdrop-blur-sm">
-            <a href="#beranda" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">BERANDA</a>
-            <a href="#galeri" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">GALERI</a>
-            <a href="#aktivitas" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">BERITA</a>
-            <a href="#kontak" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">KONTAK</a>
+            <a href="index.html" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">BERANDA</a>
+            <a href="sejarah.html" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">SEJARAH</a>
+            <a href="fasilitas.html" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">FASILITAS</a>
+            <a href="galeri.html" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">GALERI</a>
+            <a href="berita.html" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">BERITA</a>
+            <a href="reservasi.html" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">RESERVASI</a>
+            <a href="faq.html" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">FAQ</a>
+            <a href="kontak.html" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">KONTAK</a>
         </div>
     </header>
 
