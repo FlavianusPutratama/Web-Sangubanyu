@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Sangubanyu</title>
+    
+    <!-- Tailwind CSS via Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- CSS Animasi & Styling -->
+    <style>
+        body {
+            background-color: #10140a;
+            color: #e2e8f0; /* Softer white for better readability */
+        }
+        /* Class untuk menandai link navigasi yang aktif */
+        .nav-active {
+            color: #4ade80; /* green-400 */
+            border-bottom-color: #4ade80;
+        }
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .carousel-image {
+            transition: background-image 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- HEADER -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#10140a]/80 backdrop-blur-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- LOGO -->
+            <div class="flex-1 flex justify-start">
+                <!-- Responsive margin: ml-4 on mobile, md:ml-20 on desktop -->
+                <a href="#" class="ml-4 md:ml-20">
+                    <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1753879853/LOGO_ASSYIFA_2_dgjesj.png" alt="Logo Assyifa" class="h-12 w-auto">
+                </a>
+            </div>
+            
+            <!-- DESKTOP MENU -->
+            <div class="hidden md:flex flex-none justify-center items-center space-x-8 font-bold text-sm uppercase">
+                <a href="#beranda" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Beranda</a>
+                <a href="#galeri" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Galeri</a>
+                <a href="#aktivitas" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Berita</a>
+                <a href="#kontak" class="nav-link hover:text-green-300 transition-colors pb-1 border-b-2 border-transparent">Kontak</a>
+            </div>
+            
+            <!-- MOBILE MENU BUTTON -->
+            <div class="flex-1 flex justify-end">
+                <button id="mobile-menu-button" class="text-white focus:outline-none md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#10140a]/90 backdrop-blur-sm">
+            <a href="#beranda" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">BERANDA</a>
+            <a href="#galeri" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">GALERI</a>
+            <a href="#aktivitas" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">BERITA</a>
+            <a href="#kontak" class="mobile-nav-link block py-2 px-4 text-sm hover:bg-green-500/20">KONTAK</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="beranda" class="h-screen min-h-[800px] md:min-h-[700px] flex items-center relative overflow-hidden pt-16 md:pt-0">
+            <!-- Background Image -->
+            <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656287/Drone_Image_Sangubanyu_mr15wn.png');">
+                <div class="absolute inset-0 bg-black/80"></div> <!-- Dark Overlay -->
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10 max-w-6xl">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="text-center md:text-left md:col-span-7">
+                        <h1 class="text-5xl md:text-6xl font-black uppercase leading-none scroll-animate">
+                            Explore <br> Sangubanyu
+                        </h1>
+                        <p class="mt-6 max-w-sm text-gray-300 mx-auto md:mx-0 text-base md:text-lg scroll-animate" style="transition-delay: 200ms;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius sapien ac eros mollis, at.
+                        </p>
+                        <div class="mt-8 pt-4 border-t border-white/20 max-w-xs mx-auto md:mx-0 scroll-animate" style="transition-delay: 400ms;">
+                            <a href="#galeri" class="inline-block border border-white text-white font-bold px-6 py-2 rounded-md hover:bg-white hover:text-gray-900 transition-all duration-300">
+                                More
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Image Carousel -->
+                    <div id="hero-carousel" class="relative flex items-center justify-center h-96 scroll-animate md:col-span-5" style="transition-delay: 600ms;">
+                        <!-- Nav Button -->
+                        <button id="prev-slide" class="absolute left-0 z-20 text-white/50 hover:text-white transition-colors p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        
+                        <!-- Prev Image (Desktop Only) -->
+                        <div id="prev-image-preview" class="hidden md:block absolute left-0 w-1/2 h-full bg-cover bg-center rounded-3xl opacity-50 transform -translate-x-1/2 scale-90 carousel-image"></div>
+                        
+                        <!-- Main Image -->
+                        <div id="main-image" class="relative w-full max-w-sm h-80 rounded-3xl bg-cover bg-center shadow-2xl z-10 carousel-image">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <span id="slide-number" class="block text-4xl font-bold"></span>
+                            </div>
+                        </div>
+
+                        <!-- Next Image (Desktop Only) -->
+                        <div id="next-image-preview" class="hidden md:block absolute right-0 w-1/2 h-full bg-cover bg-center rounded-3xl opacity-50 transform translate-x-1/2 scale-90 carousel-image"></div>
+
+                        <!-- Nav Button -->
+                        <button id="next-slide" class="absolute right-0 z-20 text-white/50 hover:text-white transition-colors p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- GALLERY SECTION -->
+    <section id="galeri" class="h-screen min-h-[800px] md:min-h-[700px] flex items-center relative bg-cover bg-center">
+        <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656417/Foto_Hero_Section_1_nbuluf.png');">
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            <!-- HORIZONTAL CAPSULE -->
+            <div class="flex justify-center md:justify-start space-x-4 scroll-animate overflow-x-auto pb-4">
+                <!-- Gambar 1 -->
+                <div class="flex-shrink-0 w-28 h-80 md:w-32 md:h-96 rounded-full overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656426/Foto_Hero_Section_3_su9j1d.png" alt="Gambar 1" class="w-full h-full object-cover">
+                </div>
+                <!-- Gambar 2 -->
+                <div class="flex-shrink-0 w-28 h-80 md:w-32 md:h-96 rounded-full overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 mt-4">
+                <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656419/Foto_Hero_Section_2_tqwkep.png" alt="Gambar 2" class="w-full h-full object-cover">
+                </div>
+                <!-- Gambar 3 -->
+                <div class="flex-shrink-0 w-28 h-80 md:w-32 md:h-96 rounded-full overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656418/Foto_Hero_Section_4_twqa6e.png" alt="Gambar 3" class="w-full h-full object-cover">
+                </div>
+                <!-- Gambar 4 -->
+                <div class="flex-shrink-0 w-28 h-80 md:w-32 md:h-96 rounded-full overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 mt-4">
+                <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656287/Drone_Image_Sangubanyu_mr15wn.png" alt="Gambar 4" class="w-full h-full object-cover">
+                </div>
+                <!-- Gambar 5 -->
+                <div class="flex-shrink-0 w-28 h-80 md:w-32 md:h-96 rounded-full overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752657040/Asset_Foto_Sangubanyu_x7yjc8.png" alt="Gambar 5" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="text-center md:text-left scroll-animate" style="transition-delay: 200ms;">
+                <h2 class="text-6xl font-black uppercase text-white">Galeri</h2>
+                <p class="mt-6 max-w-md text-gray-300 mx-auto md:mx-0">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras varius sapien ac eros mollis, at.
+                </p>
+                <div class="mt-8 pt-4 border-t border-white/20 max-w-xs mx-auto md:mx-0">
+                <a href="#" class="inline-block border border-white text-white font-bold px-8 py-2 rounded-md hover:bg-white hover:text-gray-900 transition-all duration-300">
+                    More
+                </a>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </section>
+
+        
+        <!-- NEWS SECTION -->
+        <section id="aktivitas" class="h-screen min-h-[800px] md:min-h-[700px] flex items-center relative bg-cover bg-center">
+            <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656418/Foto_Hero_Section_4_twqa6e.png');">
+                <div class="absolute inset-0 bg-black/70"></div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="text-center md:text-left scroll-animate">
+                        <h2 class="text-6xl font-black uppercase">Berita</h2>
+                        <h3 class="mt-2 text-lg text-gray-300">Berita Terkini</h3>
+                        <p class="mt-4 max-w-md text-gray-300 mx-auto md:mx-0">
+                           Discover and book unique experiences hosted by local experts. Find one-of-a-kind activities.
+                        </p>
+                        <div class="mt-8 pt-4 border-t border-white/20 max-w-xs mx-auto md:mx-0">
+                            <a href="#" class="inline-block border border-white text-white font-bold px-8 py-2 rounded-md hover:bg-white hover:text-gray-900 transition-all duration-300">
+                                More
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative w-full max-w-md mx-auto scroll-animate" style="transition-delay: 200ms;">
+                        <img src="https://placehold.co/500x350/777/FFF?text=Pemandian+Tirta+Assyifa" alt="Pemandian Air Panas" class="rounded-3xl w-full h-auto object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-black/50 backdrop-blur-sm rounded-b-3xl">
+                            <h4 class="font-bold text-lg">Pemandian Air Panas Tirta Assyifa Dibanjiri Para Wisatawan</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#10140a] py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+
+                <div>
+                    <h3 class="text-2xl font-black tracking-wider uppercase">Sangubanyu</h3>
+                    <div class="flex justify-center md:justify-start space-x-4 mt-4">
+                         <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <h4 class="font-bold text-lg uppercase">Kontak</h4>
+                    <ul class="text-gray-400 mt-2 space-y-1">
+                        <li><a href="mailto:info@sangubanyu.id" class="hover:text-white">info@sangubanyu.id</a></li>
+                        <li><a href="tel:+621234567890" class="hover:text-white">+62 123 4567 890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 border-t border-white/10 pt-8 mt-8">
+                &copy; 2025 Tim KKN IDBU 67 Universitas Diponegoro. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Interactive JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const allSections = document.querySelectorAll('main section, footer');
+
+            // ===== MOBILE MENU LOGIC =====
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const closeMobileMenu = () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            };
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // ===== HEADER & NAV LINK ACTIVE STATE ON SCROLL =====
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-[#10140a]');
+                } else {
+                    header.classList.remove('bg-[#10140a]');
+                }
+            });
+
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('nav-active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('nav-active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-40% 0px -60% 0px' });
+
+            allSections.forEach(section => {
+                navObserver.observe(section);
+            });
+
+            // ===== FADE-IN ANIMATION ON SCROLL =====
+            const animateObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.scroll-animate');
+            elementsToAnimate.forEach(el => {
+                animateObserver.observe(el);
+            });
+
+            // ===== HERO CAROUSEL LOGIC =====
+            const slides = [
+                { number: '01', image: 'https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656417/Foto_Hero_Section_1_nbuluf.png' },
+                { number: '02', image: 'https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656419/Foto_Hero_Section_2_tqwkep.png' },
+                { number: '03', image: 'https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656426/Foto_Hero_Section_3_su9j1d.png' },
+                { number: '04', image: 'https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656418/Foto_Hero_Section_4_twqa6e.png' }
+            ];
+
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            const mainImageEl = document.getElementById('main-image');
+            const prevImagePreviewEl = document.getElementById('prev-image-preview');
+            const nextImagePreviewEl = document.getElementById('next-image-preview');
+            const slideNumberEl = document.getElementById('slide-number');
+
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                const currentSlide = slides[currentIndex];
+                const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                const nextIndex = (currentIndex + 1) % slides.length;
+                
+                const prevSlide = slides[prevIndex];
+                const nextSlide = slides[nextIndex];
+
+                mainImageEl.style.backgroundImage = `url('${currentSlide.image}')`;
+                slideNumberEl.textContent = currentSlide.number;
+                prevImagePreviewEl.style.backgroundImage = `url('${prevSlide.image}')`;
+                nextImagePreviewEl.style.backgroundImage = `url('${nextSlide.image}')`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+            });
+
+            updateCarousel(); // Initial load
+        });
+    </script>
+
+</body>
+</html>
