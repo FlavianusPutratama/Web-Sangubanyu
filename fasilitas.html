@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fasilitas - Explore Sangubanyu</title>
+    <title><span lang="id">Fasilitas - Explore Sangubanyu</span><span lang="en" class="hidden">Facilities - Explore Sangubanyu</span></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
             background-image: url('https://res.cloudinary.com/djcrr0wsq/image/upload/v1754583780/WhatsApp_Image_2025-08-07_at_23.09.41_135e269e_gmwxow.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Membuat background tetap saat scroll */
+            background-attachment: fixed;
         }
         .bg-overlay {
             position: absolute;
@@ -27,13 +27,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(16, 20, 10, 0.85); /* Overlay gelap, sesuaikan opacity jika perlu */
+            background-color: rgba(16, 20, 10, 0.85);
             z-index: 1;
         }
-        .content-wrapper {
-            position: relative;
-            z-index: 2;
-        }
+        .content-wrapper { position: relative; z-index: 2; }
+        .hidden { display: none; }
     </style>
 </head>
 <body class="font-sans">
@@ -42,26 +40,36 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex-1 flex justify-start"><a href="index.html" class="ml-4 md:ml-20"><img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1753879853/LOGO_ASSYIFA_2_dgjesj.png" alt="Logo Assyifa" class="h-12 w-auto"></a></div>
             <div class="hidden md:flex flex-none justify-center items-center space-x-6 font-bold text-sm uppercase">
-                <a href="index.html" class="nav-link hover:text-green-300">Beranda</a>
-                <a href="sejarah.html" class="nav-link hover:text-green-300">Sejarah</a>
-                <a href="fasilitas.html" class="nav-link nav-active hover:text-green-300">Fasilitas</a>
-                <a href="galeri.html" class="nav-link hover:text-green-300">Galeri</a>
-                <a href="berita.html" class="nav-link hover:text-green-300">Berita</a>
-                <a href="reservasi.html" class="nav-link hover:text-green-300">Reservasi</a>
+                <a href="index.html" class="nav-link hover:text-green-300"><span lang="id">Beranda</span><span lang="en" class="hidden">Home</span></a>
+                <a href="sejarah.html" class="nav-link hover:text-green-300"><span lang="id">Sejarah</span><span lang="en" class="hidden">History</span></a>
+                <a href="fasilitas.html" class="nav-link nav-active hover:text-green-300"><span lang="id">Fasilitas</span><span lang="en" class="hidden">Facilities</span></a>
+                <a href="galeri.html" class="nav-link hover:text-green-300"><span lang="id">Galeri</span><span lang="en" class="hidden">Gallery</span></a>
+                <a href="berita.html" class="nav-link hover:text-green-300"><span lang="id">Berita</span><span lang="en" class="hidden">News</span></a>
+                <a href="reservasi.html" class="nav-link hover:text-green-300"><span lang="id">Reservasi</span><span lang="en" class="hidden">Reservation</span></a>
                 <a href="faq.html" class="nav-link hover:text-green-300">FAQ</a>
-                <a href="kontak.html" class="nav-link hover:text-green-300">Kontak</a>
+                <a href="kontak.html" class="nav-link hover:text-green-300"><span lang="id">Kontak</span><span lang="en" class="hidden">Contact</span></a>
+                <div class="flex space-x-2 pl-4">
+                    <button data-lang="id" class="lang-switcher font-bold text-green-400">ID</button>
+                    <span class="text-gray-500">|</span>
+                    <button data-lang="en" class="lang-switcher text-gray-400 hover:text-white">EN</button>
+                </div>
             </div>
             <div class="flex-1 flex justify-end"><button id="mobile-menu-button" class="text-white focus:outline-none md:hidden"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-[#10140a]/90 backdrop-blur-sm">
-            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">BERANDA</a>
-            <a href="sejarah.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">SEJARAH</a>
-            <a href="fasilitas.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">FASILITAS</a>
-            <a href="galeri.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">GALERI</a>
-            <a href="berita.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">BERITA</a>
-            <a href="reservasi.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">RESERVASI</a>
+             <a href="index.html" class="block py-2 px-4 text-sm hover:bg-green-500/20"><span lang="id">BERANDA</span><span lang="en" class="hidden">HOME</span></a>
+            <a href="sejarah.html" class="block py-2 px-4 text-sm hover:bg-green-500/20"><span lang="id">SEJARAH</span><span lang="en" class="hidden">HISTORY</span></a>
+            <a href="fasilitas.html" class="block py-2 px-4 text-sm hover:bg-green-500/20"><span lang="id">FASILITAS</span><span lang="en" class="hidden">FACILITIES</span></a>
+            <a href="galeri.html" class="block py-2 px-4 text-sm hover:bg-green-500/20"><span lang="id">GALERI</span><span lang="en" class="hidden">GALLERY</span></a>
+            <a href="berita.html" class="block py-2 px-4 text-sm hover:bg-green-500/20"><span lang="id">BERITA</span><span lang="en" class="hidden">NEWS</span></a>
+            <a href="reservasi.html" class="block py-2 px-4 text-sm hover:bg-green-500/20"><span lang="id">RESERVASI</span><span lang="en" class="hidden">RESERVATION</span></a>
             <a href="faq.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">FAQ</a>
-            <a href="kontak.html" class="block py-2 px-4 text-sm hover:bg-green-500/20">KONTAK</a>
+            <a href="kontak.html" class="block py-2 px-4 text-sm hover:bg-green-500/20"><span lang="id">KONTAK</span><span lang="en" class="hidden">CONTACT</span></a>
+            <div class="flex justify-center space-x-4 py-4">
+                <button data-lang="id" class="lang-switcher font-bold text-green-400">ID</button>
+                <span class="text-gray-500">|</span>
+                <button data-lang="en" class="lang-switcher text-gray-400 hover:text-white">EN</button>
+            </div>
         </div>
     </header>
 
@@ -70,56 +78,75 @@
             <div class="bg-overlay"></div>
             <div class="content-wrapper pt-32 pb-16 min-h-screen">
                 <div class="container mx-auto px-6">
-                    <h1 class="text-5xl md:text-6xl font-black uppercase text-center text-white">Fasilitas</h1>
+                    <h1 class="text-5xl md:text-6xl font-black uppercase text-center text-white"><span lang="id">Fasilitas</span><span lang="en" class="hidden">Facilities</span></h1>
                     <p class="mt-6 max-w-3xl mx-auto text-center text-gray-300">
-                        Berikut adalah fasilitas yang kami sediakan untuk kenyamanan Anda.
+                        <span lang="id">Berikut adalah fasilitas yang kami sediakan untuk kenyamanan Anda.</span>
+                        <span lang="en" class="hidden">Here are the facilities we provide for your comfort.</span>
                     </p>
                     
                     <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        
                         <div class="bg-gray-800/50 rounded-lg overflow-hidden text-center transition-transform transform hover:scale-105">
                             <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1754580447/WhatsApp_Image_2025-08-07_at_22.17.46_3db8a7cf_ggr1lh.jpg" alt="Mushola" class="w-full h-48 object-cover">
                             <div class="p-6">
-                                <h3 class="font-bold text-xl text-green-400">Mushola</h3>
-                                <p class="mt-2 text-gray-400">Tempat ibadah yang bersih dan nyaman bagi pengunjung muslim.</p>
+                                <h3 class="font-bold text-xl text-green-400"><span lang="id">Mushola</span><span lang="en" class="hidden">Prayer Room</span></h3>
+                                <p class="mt-2 text-gray-400"><span lang="id">Tempat ibadah yang bersih dan nyaman bagi pengunjung muslim.</span><span lang="en" class="hidden">A clean and comfortable place of worship for Muslim visitors.</span></p>
                             </div>
                         </div>
-                        
                         <div class="bg-gray-800/50 rounded-lg overflow-hidden text-center transition-transform transform hover:scale-105">
                             <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1754580447/WhatsApp_Image_2025-08-07_at_22.19.46_300d2006_mdeagf.jpg" alt="Ruang Ganti" class="w-full h-48 object-cover">
                             <div class="p-6">
-                                <h3 class="font-bold text-xl text-green-400">Ruang Ganti</h3>
-                                <p class="mt-2 text-gray-400">Ruang ganti pribadi yang terjaga kebersihannya untuk kenyamanan Anda.</p>
+                                <h3 class="font-bold text-xl text-green-400"><span lang="id">Ruang Ganti</span><span lang="en" class="hidden">Changing Room</span></h3>
+                                <p class="mt-2 text-gray-400"><span lang="id">Ruang ganti pribadi yang terjaga kebersihannya untuk kenyamanan Anda.</span><span lang="en" class="hidden">Private changing rooms that are kept clean for your convenience.</span></p>
                             </div>
                         </div>
-
                         <div class="bg-gray-800/50 rounded-lg overflow-hidden text-center transition-transform transform hover:scale-105">
                             <img src="https://placehold.co/600x400/555/FFF?text=Warung+Makan" alt="Warung Makan" class="w-full h-48 object-cover">
                             <div class="p-6">
-                                <h3 class="font-bold text-xl text-green-400">Warung Makan</h3>
-                                <p class="mt-2 text-gray-400">Menyediakan aneka hidangan lokal dan minuman untuk melengkapi kunjungan Anda.</p>
+                                <h3 class="font-bold text-xl text-green-400"><span lang="id">Warung Makan</span><span lang="en" class="hidden">Food Stall</span></h3>
+                                <p class="mt-2 text-gray-400"><span lang="id">Menyediakan aneka hidangan lokal dan minuman untuk melengkapi kunjungan Anda.</span><span lang="en" class="hidden">Providing a variety of local dishes and drinks to complement your visit.</span></p>
                             </div>
                         </div>
-
                         <div class="bg-gray-800/50 rounded-lg overflow-hidden text-center transition-transform transform hover:scale-105">
                             <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656419/Foto_Hero_Section_2_tqwkep.png" alt="Kolam Air Panas" class="w-full h-48 object-cover">
                             <div class="p-6">
-                                <h3 class="font-bold text-xl text-green-400">Kolam Air Panas</h3>
-                                <p class="mt-2 text-gray-400">Kolam rendam air panas alami yang menyehatkan.</p>
+                                <h3 class="font-bold text-xl text-green-400"><span lang="id">Kolam Air Panas</span><span lang="en" class="hidden">Hot Spring Pool</span></h3>
+                                <p class="mt-2 text-gray-400"><span lang="id">Kolam rendam air panas alami yang menyehatkan.</span><span lang="en" class="hidden">A healthy natural hot spring soaking pool.</span></p>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-[#10140a] py-16"><div class="container mx-auto px-6"><div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left"><div><h3 class="text-2xl font-black tracking-wider uppercase">Sangubanyu</h3><div class="flex justify-center md:justify-start space-x-4 mt-4"><a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07...z"/></svg></a><a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg></a></div></div><div class="text-center md:text-right"><h4 class="font-bold text-lg uppercase">Kontak</h4><ul class="text-gray-400 mt-2 space-y-1"><li><a href="mailto:info@sangubanyu.id" class="hover:text-white">info@sangubanyu.id</a></li><li><a href="tel:+621234567890" class="hover:text-white">+62 123 4567 890</a></li></ul></div></div><div class="text-center text-gray-500 border-t border-white/10 pt-8 mt-8">&copy; 2025 Tim KKN IDBU 67 Universitas Diponegoro. All rights reserved.</div></div></footer>
+    <footer class="bg-[#10140a] py-16"><div class="container mx-auto px-6"><div class="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left"><div><h3 class="text-2xl font-black tracking-wider uppercase">Sangubanyu</h3><div class="flex justify-center md:justify-start space-x-4 mt-4"><a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07...z"/></svg></a><a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v2.385z"/></svg></a></div></div><div class="text-center md:text-right"><h4 class="font-bold text-lg uppercase"><span lang="id">Kontak</span><span lang="en" class="hidden">Contact</span></h4><ul class="text-gray-400 mt-2 space-y-1"><li><a href="mailto:info@sangubanyu.id" class="hover:text-white">info@sangubanyu.id</a></li><li><a href="tel:+621234567890" class="hover:text-white">+62 123 4567 890</a></li></ul></div></div><div class="text-center text-gray-500 border-t border-white/10 pt-8 mt-8">&copy; 2025 Tim KKN IDBU 67 Universitas Diponegoro. All rights reserved.</div></div></footer>
 
     <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('mobile-menu-button').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            const langSwitchers = document.querySelectorAll('.lang-switcher');
+            const setLanguage = (lang) => {
+                const inactiveLang = lang === 'id' ? 'en' : 'id';
+                document.querySelectorAll(`[lang="${inactiveLang}"]`).forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll(`[lang="${lang}"]`).forEach(el => el.classList.remove('hidden'));
+                langSwitchers.forEach(switcher => {
+                    if (switcher.getAttribute('data-lang') === lang) {
+                        switcher.classList.add('text-green-400', 'font-bold');
+                        switcher.classList.remove('text-gray-400');
+                    } else {
+                        switcher.classList.remove('text-green-400', 'font-bold');
+                        switcher.classList.add('text-gray-400');
+                    }
+                });
+                localStorage.setItem('language', lang);
+            };
+            langSwitchers.forEach(switcher => {
+                switcher.addEventListener('click', (e) => setLanguage(e.target.getAttribute('data-lang')));
+            });
+            setLanguage(localStorage.getItem('language') || 'id');
         });
     </script>
 </body>
