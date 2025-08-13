@@ -14,6 +14,26 @@
     <style>
         body { background-color: #10140a; color: #e2e8f0; }
         .nav-active { color: #4ade80; }
+        .section-with-bg {
+            position: relative;
+            background-image: url('https://res.cloudinary.com/djcrr0wsq/image/upload/v1754583780/WhatsApp_Image_2025-08-07_at_23.09.41_135e269e_gmwxow.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Membuat background tetap saat scroll */
+        }
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(16, 20, 10, 0.85); /* Overlay gelap, sesuaikan opacity jika perlu */
+            z-index: 1;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
     </style>
 </head>
 <body class="font-sans">
@@ -46,26 +66,51 @@
     </header>
 
     <main>
-        <section class="pt-32 pb-16 min-h-screen">
-            <div class="container mx-auto px-6">
-                <h1 class="text-5xl md:text-6xl font-black uppercase text-center">Fasilitas</h1>
-                <p class="mt-6 max-w-3xl mx-auto text-center text-gray-300">
-                    Berikut adalah fasilitas yang kami sediakan untuk kenyamanan Anda.
-                </p>
-                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gray-800/20 p-6 rounded-lg text-center">
-                        <h3 class="font-bold text-xl text-green-400">Kolam Air Panas</h3>
-                        <p class="mt-2 text-gray-400">Kolam rendam air panas alami yang menyehatkan.</p>
+        <section class="section-with-bg">
+            <div class="bg-overlay"></div>
+            <div class="content-wrapper pt-32 pb-16 min-h-screen">
+                <div class="container mx-auto px-6">
+                    <h1 class="text-5xl md:text-6xl font-black uppercase text-center text-white">Fasilitas</h1>
+                    <p class="mt-6 max-w-3xl mx-auto text-center text-gray-300">
+                        Berikut adalah fasilitas yang kami sediakan untuk kenyamanan Anda.
+                    </p>
+                    
+                    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <div class="bg-gray-800/50 rounded-lg overflow-hidden text-center transition-transform transform hover:scale-105">
+                            <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1754580447/WhatsApp_Image_2025-08-07_at_22.17.46_3db8a7cf_ggr1lh.jpg" alt="Mushola" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl text-green-400">Mushola</h3>
+                                <p class="mt-2 text-gray-400">Tempat ibadah yang bersih dan nyaman bagi pengunjung muslim.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 rounded-lg overflow-hidden text-center transition-transform transform hover:scale-105">
+                            <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1754580447/WhatsApp_Image_2025-08-07_at_22.19.46_300d2006_mdeagf.jpg" alt="Ruang Ganti" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl text-green-400">Ruang Ganti</h3>
+                                <p class="mt-2 text-gray-400">Ruang ganti pribadi yang terjaga kebersihannya untuk kenyamanan Anda.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-800/50 rounded-lg overflow-hidden text-center transition-transform transform hover:scale-105">
+                            <img src="https://placehold.co/600x400/555/FFF?text=Warung+Makan" alt="Warung Makan" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl text-green-400">Warung Makan</h3>
+                                <p class="mt-2 text-gray-400">Menyediakan aneka hidangan lokal dan minuman untuk melengkapi kunjungan Anda.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-800/50 rounded-lg overflow-hidden text-center transition-transform transform hover:scale-105">
+                            <img src="https://res.cloudinary.com/djcrr0wsq/image/upload/v1752656419/Foto_Hero_Section_2_tqwkep.png" alt="Kolam Air Panas" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="font-bold text-xl text-green-400">Kolam Air Panas</h3>
+                                <p class="mt-2 text-gray-400">Kolam rendam air panas alami yang menyehatkan.</p>
+                            </div>
+                        </div>
+                        
                     </div>
-                    <div class="bg-gray-800/20 p-6 rounded-lg text-center">
-                        <h3 class="font-bold text-xl text-green-400">Area Parkir Luas</h3>
-                        <p class="mt-2 text-gray-400">Kapasitas parkir yang aman dan memadai.</p>
-                    </div>
-                    <div class="bg-gray-800/20 p-6 rounded-lg text-center">
-                        <h3 class="font-bold text-xl text-green-400">Kamar Bilas</h3>
-                        <p class="mt-2 text-gray-400">Fasilitas kamar bilas yang bersih dan nyaman.</p>
-                    </div>
-                    </div>
+                </div>
             </div>
         </section>
     </main>
